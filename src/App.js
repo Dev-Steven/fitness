@@ -1,9 +1,8 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Navbar } from 'react-bootstrap';
 
-import NavBar from './components/navBar';
-import Dashboard from './components/Dashboard';
+import NavBar from './components/Navbar/Navbar';
+import Dashboard from './components/Dashboard/Dashboard';
 
 const App = () => {
 	return (
