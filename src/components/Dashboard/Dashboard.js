@@ -1,6 +1,8 @@
 import React from 'react';
 import './Dashboard.scss';
 
+import Chart from './Chart';
+
 const Dashboard = () => {
 	return (
 		<div className='dashboard-container'>
@@ -17,6 +19,7 @@ const Dashboard = () => {
 					</ul>
 				</div>
 			</div>
+			<Chart />
 		</div>
 	);
 };
