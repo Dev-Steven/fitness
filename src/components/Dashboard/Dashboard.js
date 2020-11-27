@@ -2,6 +2,7 @@ import React from 'react';
 import './Dashboard.scss';
 
 import Chart from './Chart';
+import Plan from './Plan';
 
 const Dashboard = () => {
 	return (
@@ -11,15 +12,16 @@ const Dashboard = () => {
 					Keep it going Steven you got this! Take a look at your
 					totals for today!
 				</h4>
-				<div>
-					<ul>
-						<li>Calories</li>
-						<li>Stand Hours</li>
-						<li>Exercise Minutes</li>
-					</ul>
-				</div>
+				<ul>
+					<li>Calories</li>
+					<li>Stand Hours</li>
+					<li>Exercise Minutes</li>
+				</ul>
 			</div>
-			<Chart />
+			<div className='workouts'>
+				<Chart />
+				<Plan />
+			</div>
 		</div>
 	);
 };

@@ -1,8 +1,11 @@
+$bg-color: #353b48;
+$text-color: #dcdde1;
+
 .dashboard-container {
 	padding: 100px 50px;
 	.daily {
-		color: #dcdde1;
-		background-color: #353b48;
+		color: $text-color;
+		background-color: $bg-color;
 		padding: 25px;
 		margin: auto;
 		width: 50%;
@@ -10,5 +13,13 @@
 		h4 {
 			text-align: center;
 		}
+	}
+	.workouts {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 20px;
+		margin: auto;
+		padding: 75px;
+		width: 75%;
 	}
 }
