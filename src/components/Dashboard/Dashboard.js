@@ -8,15 +8,12 @@ const Dashboard = () => {
 	return (
 		<div className='dashboard-container'>
 			<div className='daily'>
-				<h4>
-					Keep it going Steven you got this! Take a look at your
-					totals for today!
-				</h4>
-				<ul>
-					<li>Calories</li>
-					<li>Stand Hours</li>
-					<li>Exercise Minutes</li>
-				</ul>
+				<h4>Keep it going Steven you got this!</h4>
+				<div className='stats'>
+					<p>Calories</p>
+					<p>Stand Hours</p>
+					<p>Exercise Minutes</p>
+				</div>
 			</div>
 			<div className='workouts'>
 				<Chart />
