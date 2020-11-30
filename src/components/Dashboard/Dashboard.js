@@ -10,9 +10,9 @@ const Dashboard = () => {
 			<div className='daily'>
 				<h4>Keep it going Steven you got this!</h4>
 				<div className='stats'>
-					<p>Calories</p>
-					<p>Stand Hours</p>
-					<p>Exercise Minutes</p>
+					<p className='calories'>Calories</p>
+					<p className='stand'>Stand Hours</p>
+					<p className='exercise'>Exercise Minutes</p>
 				</div>
 			</div>
 			<div className='workouts'>
