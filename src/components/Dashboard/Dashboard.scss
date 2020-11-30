@@ -1,5 +1,8 @@
 $bg-color: #353b48;
 $text-color: #dcdde1;
+$calories-color: #f83480;
+$stand-color: #00eef1;
+$exercise-color: #8cf200;
 
 .dashboard-container {
 	padding: 100px 50px;
@@ -22,11 +25,21 @@ $text-color: #dcdde1;
 			padding: 15px;
 			p {
 				height: 75px;
-				width: 150px;
-				background-color: #0097e6;
+				width: 175px;
 				border-radius: 8px;
 				padding: 5px;
 				text-align: center;
+				color: white;
+				font-weight: bold;
+			}
+			.calories {
+				background-color: $calories-color;
+			}
+			.stand {
+				background-color: $stand-color;
+			}
+			.exercise {
+				background-color: $exercise-color;
 			}
 		}
 	}
