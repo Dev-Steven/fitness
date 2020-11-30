@@ -6,10 +6,10 @@ const Plan = () => {
 		<div className='plan-container'>
 			<h6>Planned Workouts</h6>
 			<ul>
-				<li>Run</li>
-				<li>Jump Rope</li>
-				<li>Chest Day</li>
-				<li>Back Day</li>
+				<input type='checkbox' label='Run' /> Run <br />
+				<input type='checkbox' label='Jump Rope' /> Jump Rope <br />
+				<input type='checkbox' label='Chest Day' /> Chest Day <br />
+				<input type='checkbox' label='Back Day' /> Back Day
 			</ul>
 		</div>
 	);
