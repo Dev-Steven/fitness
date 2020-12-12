@@ -2,8 +2,7 @@ const initialState = {
 	workouts: [],
 };
 
-export default function (state = initialState, action) {
-	console.log('action type: ', action.type);
+export default function workoutReducer(state = initialState, action) {
 	switch (action.type) {
 		case 'ADD_WORKOUT': {
 			console.log(action.payload);
@@ -13,7 +12,6 @@ export default function (state = initialState, action) {
 			};
 		}
 		default:
-			// console.log('default');
 			return state;
 	}
 }
