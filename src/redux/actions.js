@@ -1,8 +1,8 @@
 // import actionTypes later
 
-export const addWorkout = content => ({
+export const addWorkout = workout => ({
 	type: 'ADD_WORKOUT',
 	payload: {
-		content,
+		workout,
 	},
 });
