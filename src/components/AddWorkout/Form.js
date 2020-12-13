@@ -5,8 +5,12 @@ let Form = props => {
 	const { handleSubmit } = props;
 	return (
 		<form onSubmit={handleSubmit}>
-			<label>Type of workout</label>
-			<Field name='workout' component='input' type='text' />
+			<label>Name</label>
+			<Field name='name' component='input' type='text' />
+			<label>Total Calories</label>
+			<Field name='calories' component='input' type='number' />
+			<label>Duration</label>
+			<Field name='duration' component='input' type='number' />
 			<button type='submit'>Submit</button>
 		</form>
 	);
