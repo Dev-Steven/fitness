@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react';
 import './Dashboard.scss';
 import { connect } from 'react-redux';
 
@@ -6,9 +5,6 @@ import Chart from './Chart';
 import Plan from './Plan';
 
 const Dashboard = props => {
-	useEffect(() => {
-		console.log(props.workouts.workouts[0].workout.name);
-	});
 	return (
 		<div className='dashboard-container'>
 			<div className='daily'>
@@ -18,13 +14,14 @@ const Dashboard = props => {
 					<p className='stand'>Stand Hours </p>
 					<p className='exercise'>Exercise Minutes</p>
 				</div>
-				{/* {props.workouts.map(workout => {
+				<p>Workouts</p>
+				{props.workouts.map((workout, i) => {
 					return (
 						<div>
-							<p>{workout.name}</p>
+							<p key={i}>{workout.name}</p>
 						</div>
 					);
-				})} */}
+				})}
 			</div>
 			<div className='workouts'>
 				<Chart />
@@ -35,7 +32,8 @@ const Dashboard = props => {
 };
 
 const mapStateToProps = state => ({
-	workouts: state.workouts,
+	workouts: state.workouts.workouts,
+	totalCals: state.workouts.totalCal,
 });
 
 export default connect(mapStateToProps)(Dashboard);
