@@ -29,7 +29,7 @@ const Chart = props => {
 	);
 };
 const mapStateToProps = state => ({
-	state: state.chart,
+	state: state.workouts.chart,
 });
 
 export default connect(mapStateToProps)(Chart);
