@@ -14,14 +14,6 @@ const Dashboard = props => {
 					<p className='stand'>Stand Hours </p>
 					<p className='exercise'>Exercise Minutes</p>
 				</div>
-				<p>Workouts</p>
-				{props.workouts.map((workout, i) => {
-					return (
-						<div>
-							<p key={i}>{workout.name}</p>
-						</div>
-					);
-				})}
 			</div>
 			<div className='workouts'>
 				<Chart />

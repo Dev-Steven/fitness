@@ -1,12 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Doughnut } from 'react-chartjs-2';
 import { connect } from 'react-redux';
 import './Chart.scss';
 
 const Chart = props => {
-	useEffect(() => {
-		console.log('props: ', props);
-	});
 	const { state } = props;
 	return (
 		<div className='chart-container'>
@@ -29,7 +26,7 @@ const Chart = props => {
 	);
 };
 const mapStateToProps = state => ({
-	state: state.chart,
+	state: state.workouts.chart,
 });
 
 export default connect(mapStateToProps)(Chart);
