@@ -13,7 +13,7 @@ const initialState = {
 	],
 	totalCal: 0,
 	chart: {
-		labels: ['Running', 'HIIT', 'Jump Rope', 'Weight Training', 'Cycling'],
+		labels: ['HIIT', 'Run'],
 		datasets: [
 			{
 				label: 'Workouts',
@@ -31,7 +31,7 @@ const initialState = {
 					'#003350',
 					'#35014F',
 				],
-				data: [2, 1, 1, 3, 1],
+				data: [1, 1],
 			},
 		],
 	},
@@ -40,12 +40,25 @@ const initialState = {
 export default function workoutReducer(state = initialState, action) {
 	switch (action.type) {
 		case 'ADD_WORKOUT': {
-			// console.log(state);
+			console.log('payload: ', action.payload);
 			const newWorkouts = state.workouts.concat(action.payload);
-			// console.log(newWorkouts);
+			const updatedLabels = state.chart.labels.concat(
+				action.payload.name
+			);
+			const updatedData = state.chart.datasets[0].data.concat(1);
 			const newState = {
 				...state,
 				workouts: newWorkouts,
+				chart: {
+					...state.chart,
+					labels: updatedLabels,
+					datasets: [
+						{
+							...state.chart.datasets[0],
+							data: updatedData,
+						},
+					],
+				},
 			};
 			console.log(newState);
 			return newState;
