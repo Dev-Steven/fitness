@@ -40,28 +40,48 @@ const initialState = {
 export default function workoutReducer(state = initialState, action) {
 	switch (action.type) {
 		case 'ADD_WORKOUT': {
-			console.log('payload: ', action.payload);
 			const newWorkouts = state.workouts.concat(action.payload);
-			const updatedLabels = state.chart.labels.concat(
-				action.payload.name
+			const labelIndex = state.chart.labels.findIndex(
+				label => label === action.payload.name
 			);
-			const updatedData = state.chart.datasets[0].data.concat(1);
-			const newState = {
-				...state,
-				workouts: newWorkouts,
-				chart: {
-					...state.chart,
-					labels: updatedLabels,
-					datasets: [
-						{
-							...state.chart.datasets[0],
-							data: updatedData,
-						},
-					],
-				},
-			};
-			console.log(newState);
-			return newState;
+			if (labelIndex >= 0) {
+				const updatedData = [...state.chart.datasets[0].data];
+				updatedData[labelIndex] = updatedData[labelIndex] + 1;
+				const newState = {
+					...state,
+					workouts: newWorkouts,
+					chart: {
+						...state.chart,
+						datasets: [
+							{
+								...state.chart.datasets[0],
+								data: updatedData,
+							},
+						],
+					},
+				};
+				return newState;
+			} else {
+				const updatedLabels = state.chart.labels.concat(
+					action.payload.name
+				);
+				const updatedData = state.chart.datasets[0].data.concat(1);
+				const newState = {
+					...state,
+					workouts: newWorkouts,
+					chart: {
+						...state.chart,
+						labels: updatedLabels,
+						datasets: [
+							{
+								...state.chart.datasets[0],
+								data: updatedData,
+							},
+						],
+					},
+				};
+				return newState;
+			}
 		}
 		default:
 			return state;
