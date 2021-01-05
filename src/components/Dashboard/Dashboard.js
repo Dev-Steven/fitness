@@ -10,9 +10,16 @@ const Dashboard = props => {
 			<div className='daily'>
 				<h4>Keep it going Steven you got this!</h4>
 				<div className='stats'>
-					<p className='calories'>Calories</p>
-					<p className='stand'>Stand Hours </p>
-					<p className='exercise'>Exercise Minutes</p>
+					<p className='calories'>
+						Calories <br />
+						{props.totals.calories}
+					</p>
+					<p className='stand'>
+						Stand Hours <br /> {props.totals.standHours}
+					</p>
+					<p className='exercise'>
+						Exercise Minutes <br /> {props.totals.exerciseMinutes}
+					</p>
 				</div>
 			</div>
 			<div className='workouts'>
@@ -25,7 +32,7 @@ const Dashboard = props => {
 
 const mapStateToProps = state => ({
 	workouts: state.workouts.workouts,
-	totalCals: state.workouts.totalCal,
+	totals: state.workouts.totals,
 });
 
 export default connect(mapStateToProps)(Dashboard);

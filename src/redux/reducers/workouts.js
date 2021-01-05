@@ -11,7 +11,11 @@ const initialState = {
 			duration: '400',
 		},
 	],
-	totalCal: 0,
+	totals: {
+		calories: 355,
+		standHours: 0,
+		exerciseMinutes: 430,
+	},
 	chart: {
 		labels: ['HIIT', 'Run'],
 		datasets: [
