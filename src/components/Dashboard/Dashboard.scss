@@ -1,0 +1,55 @@
+$bg-color: #353b48;
+$text-color: #dcdde1;
+$calories-color: #f83480;
+$stand-color: #00eef1;
+$exercise-color: #8cf200;
+
+.dashboard-container {
+	padding: 100px 50px;
+	.daily {
+		color: $text-color;
+		background-color: $bg-color;
+		padding: 25px;
+		margin: auto;
+		width: 50%;
+		border-radius: 10px;
+		h4 {
+			text-align: center;
+		}
+		.stats {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-gap: 20px;
+			margin: auto;
+			width: 59%;
+			padding: 15px;
+			// border: 1px solid white;
+			p {
+				height: 75px;
+				width: 175px;
+				border-radius: 8px;
+				padding: 5px;
+				text-align: center;
+				color: white;
+				font-weight: bold;
+			}
+			.calories {
+				background-color: $calories-color;
+			}
+			.stand {
+				background-color: $stand-color;
+			}
+			.exercise {
+				background-color: $exercise-color;
+			}
+		}
+	}
+	.workouts {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 20px;
+		margin: auto;
+		padding: 75px;
+		width: 75%;
+	}
+}

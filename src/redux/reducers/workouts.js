@@ -41,7 +41,7 @@ const initialState = {
 	},
 };
 
-function newWorkout(state, action) {
+function newWorkout(state, action, newWorkouts) {
 	const updatedLabels = state.chart.labels.concat(action.payload.name);
 	const updatedData = state.chart.datasets[0].data.concat(1);
 	const newState = {
@@ -68,73 +68,43 @@ function newWorkout(state, action) {
 	return newState;
 }
 
+function existingWorkout(state, action, newWorkouts, labelIndex) {
+	const updatedData = [...state.chart.datasets[0].data];
+	updatedData[labelIndex] = updatedData[labelIndex] + 1;
+	const newState = {
+		...state,
+		workouts: newWorkouts,
+		totals: {
+			...state.totals,
+			calories: state.totals.calories + parseInt(action.payload.calories),
+			exerciseMinutes:
+				state.totals.exerciseMinutes +
+				parseInt(action.payload.duration),
+		},
+		chart: {
+			...state.chart,
+			datasets: [
+				{
+					...state.chart.datasets[0],
+					data: updatedData,
+				},
+			],
+		},
+	};
+	return newState;
+}
+
 export default function workoutReducer(state = initialState, action) {
 	switch (action.type) {
 		case 'ADD_WORKOUT': {
-			console.log('payload: ', action.payload);
 			const newWorkouts = state.workouts.concat(action.payload);
 			const labelIndex = state.chart.labels.findIndex(
 				label => label === action.payload.name
 			);
 			if (labelIndex >= 0) {
-				// workout exists
-				const updatedData = [...state.chart.datasets[0].data];
-				updatedData[labelIndex] = updatedData[labelIndex] + 1;
-				const newState = {
-					...state,
-					workouts: newWorkouts,
-					totals: {
-						...state.totals,
-						calories:
-							state.totals.calories +
-							parseInt(action.payload.calories),
-						exerciseMinutes:
-							state.totals.exerciseMinutes +
-							parseInt(action.payload.duration),
-					},
-					chart: {
-						...state.chart,
-						datasets: [
-							{
-								...state.chart.datasets[0],
-								data: updatedData,
-							},
-						],
-					},
-				};
-				console.log('workout exists: ', newState);
-				return newState;
+				return existingWorkout(state, action, newWorkouts, labelIndex);
 			} else {
-				// new workout
-				// const updatedLabels = state.chart.labels.concat(
-				// 	action.payload.name
-				// );
-				// const updatedData = state.chart.datasets[0].data.concat(1);
-				// const newState = {
-				// 	...state,
-				// 	workouts: newWorkouts,
-				// 	totals: {
-				// 		...state.totals,
-				// 		calories:
-				// 			state.totals.calories +
-				// 			parseInt(action.payload.calories),
-				// 		exerciseMinutes:
-				// 			state.totals.exerciseMinutes +
-				// 			parseInt(action.payload.duration),
-				// 	},
-				// 	chart: {
-				// 		...state.chart,
-				// 		labels: updatedLabels,
-				// 		datasets: [
-				// 			{
-				// 				...state.chart.datasets[0],
-				// 				data: updatedData,
-				// 			},
-				// 		],
-				// 	},
-				// };
-				// console.log('new workout: ', newState);
-				return newWorkout(state, action);
+				return newWorkout(state, action, newWorkouts);
 			}
 		}
 		default:
