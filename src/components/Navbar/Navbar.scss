@@ -1,0 +1,15 @@
+@import '../Dashboard/Dashboard.scss';
+
+.brand {
+	font-size: 25px;
+	margin-right: 15px;
+}
+
+.link {
+	color: $text-color;
+}
+
+.link:hover {
+	color: $text-color;
+	text-decoration: none;
+}
