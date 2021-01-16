@@ -13,7 +13,7 @@ const initialState = {
 	],
 	totals: {
 		calories: 355,
-		standHours: 0,
+		standHours: 6,
 		exerciseMinutes: 430,
 	},
 	chart: {
