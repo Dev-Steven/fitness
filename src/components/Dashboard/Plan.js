@@ -1,18 +1,48 @@
 import React from 'react';
-import './Plan.scss';
+import { connect } from 'react-redux';
 
-const Plan = () => {
+import './Plan.scss';
+import Carousel from 'react-bootstrap/Carousel';
+import Card from 'react-bootstrap/Card';
+
+const Plan = props => {
 	return (
 		<div className='plan-container'>
-			<h6>Planned Workouts</h6>
-			<ul>
-				<input type='checkbox' label='Run' /> Run <br />
-				<input type='checkbox' label='Jump Rope' /> Jump Rope <br />
-				<input type='checkbox' label='Chest Day' /> Chest Day <br />
-				<input type='checkbox' label='Back Day' /> Back Day
-			</ul>
+			<h6>Workouts</h6>
+			<div>
+				{props.workouts.map(workout => (
+					<div>
+						<h4>{workout.name}</h4>
+						<p>{workout.calories} calories</p>
+						<p>{workout.duration} minutes</p>
+					</div>
+				))}
+			</div>
+			{/* <Carousel>
+				<Carousel.Item>
+					<div className='new_html_code'>
+						<Card style={{ width: '18rem' }} bg='dark' text='light'>
+							<Card.Body>
+								<Card.Title>Card Title</Card.Title>
+								<Card.Subtitle className='mb-2 text-muted'>
+									Card Subtitle
+								</Card.Subtitle>
+								<Card.Text>
+									Some quick example text to build on the card
+									title and make up the bulk of the card's
+									content.
+								</Card.Text>
+							</Card.Body>
+						</Card>
+					</div>
+				</Carousel.Item>
+			</Carousel> */}
 		</div>
 	);
 };
 
-export default Plan;
+const mapStateToProps = state => ({
+	workouts: state.workouts.workouts,
+});
+
+export default connect(mapStateToProps)(Plan);
