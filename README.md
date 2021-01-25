@@ -10,8 +10,12 @@ Fitness Tracker is built primarily with React.js and utilizing libraries like Re
 
 Here are some screenshots of the Fitness Tracker App so far.
 
-The Dashboard.
+The Dashboard.  
 ![Dashboard](/src/images/dashboard.png)
 
-The Add Workout Form.
+The Add Workout Form.  
 ![Form](/src/images/addWorkoutForm.png)
+
+## Still Currently in Development
+
+Fitness Tracker is still under development which is why it hasn't been deployed yet.
