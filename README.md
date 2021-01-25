@@ -1,6 +1,6 @@
-# Fitness Tracker
+# Welcome to Fitness Tracker!
 
-Fitness Tracker is web application that helps users keep track of their fitness progress. Users are able to add workouts which Fitness Tracker then beautifully displays information via a Pie Chart. Fitness Tracker also sums up your total calories and duration of all your workouts.
+Fitness Tracker is a web application that helps users keep track of their fitness progress. Users are able to add workouts by filling out a simple form. This form requests information about the name, the total calories burned and the total duration of that workout. Fitness Tracker then uses this provided information to display details about each workout and totals from all your workouts, it even beautifully displays how diverse your workouts are via a pie chart!
 
 ## Technology and Tools
 
