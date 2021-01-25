@@ -4,7 +4,8 @@ Fitness Tracker is web application that helps users keep track of their fitness 
 
 ## Technology and Tools
 
-Fitness Tracker is built primarily with **React.js** and utilizing libraries like **React Bootstrap** and **SCSS**. Please checkout the **package.json** file to view all dependencies being used.
+Fitness Tracker is built primarily with **React.js** and utilizing libraries like **React Bootstrap** and **SCSS**.  
+Please checkout the **package.json** file to view all dependencies being used.
 
 ## Screen Shots
 
