@@ -1,27 +1,15 @@
-import './Dashboard.scss';
-import { connect } from 'react-redux';
+import React from 'react';
 
+import Daily from './Daily';
 import Chart from './Chart';
 import Plan from './Plan';
 
-const Dashboard = props => {
+import './Dashboard.scss';
+
+const Dashboard = () => {
 	return (
 		<div className='dashboard-container'>
-			<div className='daily'>
-				<h4>Keep it going Steven you got this!</h4>
-				<div className='stats'>
-					<p className='calories'>
-						Calories <br />
-						{props.totals.calories}
-					</p>
-					<p className='stand'>
-						Stand Hours <br /> {props.totals.standHours}
-					</p>
-					<p className='exercise'>
-						Exercise Minutes <br /> {props.totals.exerciseMinutes}
-					</p>
-				</div>
-			</div>
+			<Daily />
 			<div className='workouts'>
 				<Chart />
 				<Plan />
@@ -30,9 +18,4 @@ const Dashboard = props => {
 	);
 };
 
-const mapStateToProps = state => ({
-	workouts: state.workouts.workouts,
-	totals: state.workouts.totals,
-});
-
-export default connect(mapStateToProps)(Dashboard);
+export default Dashboard;
