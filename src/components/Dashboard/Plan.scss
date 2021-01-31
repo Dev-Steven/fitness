@@ -3,22 +3,19 @@
 .plan-container {
 	// background-color: $bg-color;
 	// color: $text-color;
-	border-radius: 10px;
+	// border-radius: 10px;
 	margin: auto;
 	width: 75%;
 	padding: 25px;
 	height: 500px;
+	text-align: center;
+
 	h6 {
 		text-align: center;
 	}
-	div.new_html_code {
-		width: 550px;
-		height: 100px;
-		min-width: 150px;
-		min-height: 100px;
-		max-width: 200px;
-		max-height: 100px;
-		overflow: hidden;
-		display: block;
+
+	#card {
+		padding: 25px;
+		border-radius: 10px;
 	}
 }

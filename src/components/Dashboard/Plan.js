@@ -8,8 +8,8 @@ import Card from 'react-bootstrap/Card';
 const Plan = props => {
 	return (
 		<div className='plan-container'>
-			<h6>Workouts</h6>
-			<div>
+			<h5>Workouts</h5>
+			{/* <div>
 				{props.workouts.map(workout => (
 					<div>
 						<h4>{workout.name}</h4>
@@ -17,26 +17,22 @@ const Plan = props => {
 						<p>{workout.duration} minutes</p>
 					</div>
 				))}
-			</div>
-			{/* <Carousel>
-				<Carousel.Item>
-					<div className='new_html_code'>
-						<Card style={{ width: '18rem' }} bg='dark' text='light'>
+			</div> */}
+			<Carousel>
+				{props.workouts.map(workout => (
+					<Carousel.Item>
+						<Card id='card' bg='dark' text='light'>
 							<Card.Body>
-								<Card.Title>Card Title</Card.Title>
-								<Card.Subtitle className='mb-2 text-muted'>
-									Card Subtitle
-								</Card.Subtitle>
+								<Card.Title>{workout.name}</Card.Title>
 								<Card.Text>
-									Some quick example text to build on the card
-									title and make up the bulk of the card's
-									content.
+									<p>{workout.calories} calories</p>
+									<p>{workout.duration} minutes</p>
 								</Card.Text>
 							</Card.Body>
 						</Card>
-					</div>
-				</Carousel.Item>
-			</Carousel> */}
+					</Carousel.Item>
+				))}
+			</Carousel>
 		</div>
 	);
 };
