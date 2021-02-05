@@ -23,10 +23,6 @@ $exercise-color: #8cf200;
 			text-align: center;
 		}
 		.stats {
-			// display: grid;
-			// grid-template-columns: 1fr 1fr 1fr;
-			// grid-gap: 20px;
-			// padding: 15px;
 			display: flex;
 			flex-direction: row;
 			justify-content: space-between;
@@ -35,6 +31,7 @@ $exercise-color: #8cf200;
 				width: 175px;
 				border-radius: 8px;
 				padding: 5px;
+				margin: 5px;
 				text-align: center;
 				color: white;
 				font-weight: bold;

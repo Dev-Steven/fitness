@@ -15,8 +15,7 @@ const NavBar = () => {
 					<FontAwesomeIcon icon={faRunning} />
 					Fitness
 				</Link>
-				<Nav className='mr-auto' variant='light'>
-					{/* <Nav.Link href='/addworkout'>Add Workout</Nav.Link>  */}
+				<Nav className='navbar-nav ml-auto' variant='light'>
 					<Link className='link' to='/addworkout'>
 						Add Workout
 					</Link>
