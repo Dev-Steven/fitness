@@ -7,7 +7,6 @@ const Chart = props => {
 	return (
 		<div className='chart-container'>
 			<Doughnut
-				className='doughnut'
 				data={state}
 				options={{
 					title: {
