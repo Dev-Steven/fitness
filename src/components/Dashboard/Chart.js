@@ -12,7 +12,7 @@ const Chart = props => {
 					title: {
 						display: true,
 						text: 'Your Workouts',
-						fontSize: 20,
+						fontSize: 17,
 					},
 					legend: {
 						display: true,
