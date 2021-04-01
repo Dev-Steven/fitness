@@ -12,7 +12,14 @@ class AddWorkout extends Component {
 	};
 
 	render() {
-		return <Form onSubmit={this.submit} />;
+		return (
+			<div className='form-container'>
+				<div className='form'>
+					<h3>Add a Workout</h3>
+					<Form onSubmit={this.submit} />
+				</div>
+			</div>
+		);
 	}
 }
 export default connect(null, { addWorkout })(withRouter(AddWorkout));

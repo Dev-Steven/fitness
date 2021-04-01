@@ -6,9 +6,11 @@ import store from './redux/store';
 
 import App from './App';
 
+import './style.scss';
+
 ReactDOM.render(
-	<Provider store={store}>
-		<App />
+	<Provider store={store} className='index'>
+		<App className='index' />
 	</Provider>,
 	document.getElementById('root')
 );

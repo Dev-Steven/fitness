@@ -1,3 +1,28 @@
-.addworkout-container {
-	padding: 15px;
+@import '../Dashboard/Dashboard.scss';
+
+.form-container {
+	padding: 100px 50px;
+	.form {
+		display: flex;
+		flex-direction: column;
+		color: $text-color;
+		background-color: $bg-color;
+		border-radius: 5px;
+		padding: 15px;
+		width: 35%;
+		margin: auto;
+		align-items: center;
+
+		.label {
+			min-width: 110px;
+		}
+
+		.input {
+			border-radius: 5px;
+		}
+
+		.button {
+			justify-content: center;
+		}
+	}
 }
