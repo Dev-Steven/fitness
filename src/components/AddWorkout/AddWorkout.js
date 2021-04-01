@@ -15,7 +15,7 @@ class AddWorkout extends Component {
 		return (
 			<div className='form-container'>
 				<div className='form'>
-					<h3>Add a Workout</h3>
+					<h3 className='header'>Add a Workout</h3>
 					<Form onSubmit={this.submit} />
 				</div>
 			</div>

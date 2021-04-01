@@ -3,6 +3,9 @@
 .form-container {
 	padding: 100px 50px;
 	.form {
+		.header {
+			margin-bottom: 15px;
+		}
 		display: flex;
 		flex-direction: column;
 		color: $text-color;
