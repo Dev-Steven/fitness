@@ -16,6 +16,9 @@ const NavBar = () => {
 					Fitness
 				</Link>
 				<Nav className='navbar-nav ml-auto' variant='light'>
+					<Link className='link' to='/createworkout'>
+						Workout Planner
+					</Link>
 					<Link className='link' to='/addworkout'>
 						Add Workout
 					</Link>
