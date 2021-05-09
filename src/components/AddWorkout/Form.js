@@ -10,12 +10,7 @@ let WorkoutForm = props => {
 		<Form onSubmit={handleSubmit}>
 			<Form.Group>
 				<Form.Label className='label'>Name</Form.Label>
-				<Field
-					className='input'
-					name='name'
-					component='input'
-					type='text'
-				/>
+				<Field className='input' name='name' component='input' />
 			</Form.Group>
 			<Form.Group>
 				<Form.Label className='label'>Total Calories</Form.Label>
